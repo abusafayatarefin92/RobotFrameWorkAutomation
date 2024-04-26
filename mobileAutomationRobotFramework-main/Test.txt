@@ -1,0 +1,2 @@
+Starting the appium server:
+appium server -p 9000 -a 127.0.0.1 -pa /wd/hub
