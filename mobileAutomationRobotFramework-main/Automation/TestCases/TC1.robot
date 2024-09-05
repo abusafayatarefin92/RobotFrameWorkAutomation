@@ -2,22 +2,29 @@
 Library  SeleniumLibrary
 
 *** Variables ***
+${rmpurl}  https://testpmt.azurewebsites.net/
 ${browser}  chrome
-${rmpurl}  https://rmptest.scibd.info/
-${username}     testindia
+${username}     centeruser@gmail.com
 ${password}     12345
 
 *** Test Cases ***
 LoginTest
-#    create webdriver    chrome  executable_path="C:\Users\abu.arefin\Downloads\Software\chromedriver_win32\chromedriver.exe"
-    loginToRMPApplication
-    close browser
-
-*** Keywords ***
-loginToRMPApplication
-    open browser    ${rmpurl}     ${browser}
+#    loginToRMPApplication
+#    close browser
+    open browser    ${rmpurl}   ${browser}
     maximize browser window
-    click element  xpath:/html/body/div/div[2]/div/div/div/a
+    click element  xpath://*[@id="LoginDiv"]/div/div/a
     input text  id:Email    ${username}
     input text  id:Password     ${password}
     click element   xpath:/html/body/div/div[2]/div/form/div[3]/button
+    sleep   3
+
+*** Keywords ***
+#loginToRMPApplication
+#    open browser    ${rmpurl}     ${browser}
+#    maximize browser window
+#    click element  xpath://*[@id="LoginDiv"]/div/div/a
+#    input text  id:Email    ${username}
+#    input text  id:Password     ${password}
+#    click element   xpath:/html/body/div/div[2]/div/form/div[3]/button
+#    sleep   3
